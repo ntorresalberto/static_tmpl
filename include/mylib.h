@@ -4,11 +4,13 @@
 
 template <class T> struct MyTmpl {
   T a;
-  MyTmpl(){
+  MyTmpl() : a(0) {
     std::cout << "MyTempl<" << typeid(T).name() << ">()" << std::endl;
-    a = 0;
   }
-  T show();
+  T cpp_func();
+  T h_func(){
+    return a;
+  }
 };
 
 typedef MyTmpl<float> MyTmplFloat;
